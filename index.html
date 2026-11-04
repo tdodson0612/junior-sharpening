@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junior's Edge | Professional Knife & Blade Sharpening</title>
+  <meta name="description" content="Junior's Edge — hand sharpening for kitchen knives, Japanese blades, swords and axes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo">
+      <span class="logo-mark">⚔</span>
+      <span>JUNIOR'S <em>EDGE</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="btn btn-small">Book Now</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg" style="background-image:url('images/sharpening-master.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <canvas id="sparks"></canvas>
+    <div class="hero-content">
+      <p class="eyebrow">Hand-Sharpened · Whetstone Finished</p>
+      <h1>
+        <span class="line">Dull Blades</span>
+        <span class="line accent">Die Here.</span>
+      </h1>
+      <p class="hero-sub">
+        From your everyday chef's knife to katanas, Viking axes and heirloom swords —
+        Junior brings every edge back sharper than the day it was forged.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get It Sharpened</a>
+        <a href="#gallery" class="btn btn-ghost">See The Work</a>
+      </div>
+    </div>
+    <a href="#services" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- ===== STATS STRIP ===== -->
+  <section class="stats">
+    <div class="stat reveal"><span class="num" data-count="5000">0</span><span class="label">Blades Sharpened</span></div>
+    <div class="stat reveal"><span class="num" data-count="15">0</span><span class="label">Grit Stages</span></div>
+    <div class="stat reveal"><span class="num" data-count="100">0</span><span class="label">% Hand Finished</span></div>
+    <div class="stat reveal"><span class="num" data-count="48">0</span><span class="label">Hour Turnaround</span></div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="section-head reveal">
+      <p class="eyebrow">What I Sharpen</p>
+      <h2>If It Cuts, <span class="accent">I Edge It.</span></h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-img" style="background-image:url('images/chef-knife.jpg')"></div>
+        <div class="card-body">
+          <h3>Kitchen Knives</h3>
+          <p>Chef's knives, santokus, paring and bread knives restored to a razor edge that glides through tomatoes.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img" style="background-image:url('images/katana-dojo.jpg')"></div>
+        <div class="card-body">
+          <h3>Japanese Blades</h3>
+          <p>Single and double bevel knives and katanas, finished on traditional water stones with respect for the steel.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img" style="background-image:url('images/viking-sword.jpg')"></div>
+        <div class="card-body">
+          <h3>Swords &amp; Daggers</h3>
+          <p>Display pieces, reenactment gear and collector swords — sharpened, polished or rust-restored.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img" style="background-image:url('images/viking-axe.jpg')"></div>
+        <div class="card-body">
+          <h3>Axes &amp; Tools</h3>
+          <p>Hatchets, splitting axes, machetes and garden tools ground true and ready for hard work.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="section process-section" id="process">
+    <div class="process-bg" style="background-image:url('images/sushi-knife.jpg')"></div>
+    <div class="process-overlay"></div>
+    <div class="process-inner">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Ritual</p>
+        <h2>Four Steps To <span class="accent">Lethal.</span></h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">01</span>
+          <h3>Inspect</h3>
+          <p>Every blade is checked for chips, rolls and bevel angle before a stone ever touches it.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">02</span>
+          <h3>Reprofile</h3>
+          <p>Coarse stones repair damage and set a consistent edge geometry matched to the steel.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">03</span>
+          <h3>Refine</h3>
+          <p>Progressively finer grits remove scratches and build a keen, durable cutting edge.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">04</span>
+          <h3>Hone &amp; Test</h3>
+          <p>Stropped to a mirror finish and paper-tested. If it doesn't shave, it doesn't leave.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="section" id="gallery">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Armory</p>
+      <h2>Blades That <span class="accent">Came Back Deadly.</span></h2>
+    </div>
+
+    <div class="filters reveal" id="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="viking">Viking</button>
+      <button class="filter" data-filter="japanese">Japanese</button>
+      <button class="filter" data-filter="kitchen">Kitchen</button>
+      <button class="filter" data-filter="collector">Collector</button>
+    </div>
+
+    <div class="gallery" id="galleryGrid">
+      <figure class="g-item wide" data-cat="viking">
+        <img src="images/viking-dagger.jpg" alt="Damascus Viking dagger with runes and brass hilt" loading="lazy" />
+        <figcaption>Rune-Etched Damascus Dagger</figcaption>
+      </figure>
+      <figure class="g-item" data-cat="viking">
+        <img src="images/viking-sword.jpg" alt="Viking sword on a dockside table at dusk" loading="lazy" />
+        <figcaption>Longship Sword</figcaption>
+      </figure>
+      <figure class="g-item" data-cat="viking">
+        <img src="images/viking-axe.jpg" alt="Bronze bearded axe resting on a mossy rock" loading="lazy" />
+        <figcaption>Bearded War Axe</figcaption>
+      </figure>
+      <figure class="g-item tall" data-cat="japanese">
+        <img src="images/katana-dojo.jpg" alt="Katana on a black stand in a dojo" loading="lazy" />
+        <figcaption>Dojo Katana</figcaption>
+      </figure>
+      <figure class="g-item wide" data-cat="japanese">
+        <img src="images/katana-stand.jpg" alt="Katana and saya displayed on a wooden stand" loading="lazy" />
+        <figcaption>Display Katana</figcaption>
+      </figure>
+      <figure class="g-item" data-cat="kitchen collector">
+        <img src="images/chef-knife.jpg" alt="Jeweled Damascus chef's knife on a walnut stand" loading="lazy" />
+        <figcaption>Jeweled Chef's Knife</figcaption>
+      </figure>
+      <figure class="g-item" data-cat="kitchen japanese">
+        <img src="images/sharpening-master.jpg" alt="Craftsman sharpening a knife on a whetstone" loading="lazy" />
+        <figcaption>On The Whetstone</figcaption>
+      </figure>
+      <figure class="g-item wide" data-cat="kitchen japanese">
+        <img src="images/sushi-knife.jpg" alt="Gold-engraved Damascus sushi knife on a whetstone" loading="lazy" />
+        <figcaption>Gold-Engraved Sushi Knife</figcaption>
+      </figure>
+      <figure class="g-item panorama" data-cat="collector">
+        <img src="images/scimitar.jpg" alt="Mirror-polished scimitar with gold hilt in a display case" loading="lazy" />
+        <figcaption>Mirror-Polished Scimitar</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+    <figure>
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#10095;</button>
+  </div>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section" id="pricing">
+    <div class="section-head reveal">
+      <p class="eyebrow">Straight Prices</p>
+      <h2>Pick Your <span class="accent">Weapon.</span></h2>
+    </div>
+    <div class="pricing">
+      <div class="price-card reveal">
+        <h3>Kitchen Knife</h3>
+        <p class="price">$<span>8</span><small>/ blade</small></p>
+        <ul>
+          <li>Standard edge, up to 10"</li>
+          <li>Burr removal &amp; hone</li>
+          <li>Paper-tested</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-service="Kitchen Knife">Book</a>
+      </div>
+      <div class="price-card featured reveal">
+        <span class="badge">Most Popular</span>
+        <h3>Whetstone Premium</h3>
+        <p class="price">$<span>20</span><small>/ blade</small></p>
+        <ul>
+          <li>Full hand-stone progression</li>
+          <li>Japanese &amp; high-carbon steel</li>
+          <li>Chip &amp; tip repair</li>
+          <li>Mirror strop finish</li>
+        </ul>
+        <a href="#contact" class="btn" data-service="Whetstone Premium">Book</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Swords &amp; Axes</h3>
+        <p class="price">$<span>35</span><small>+ / piece</small></p>
+        <ul>
+          <li>Katanas, swords, daggers</li>
+          <li>Axes &amp; machetes</li>
+          <li>Rust removal &amp; polish</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-service="Swords & Axes">Book</a>
+      </div>
+    </div>
+    <p class="price-note">Prices are starting points — Junior will quote heavily damaged or specialty blades before any work begins.</p>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <p class="eyebrow">Drop It Off</p>
+        <h2>Ready To <span class="accent">Get Sharp?</span></h2>
+        <p>Send a message with what you've got and Junior will get back to you with a quote and drop-off time.</p>
+        <ul class="contact-list">
+          <!-- TODO: replace with Junior's real details -->
+          <li><span>📞</span> (555) 123-4567</li>
+          <li><span>✉️</span> junior@juniorsedge.com</li>
+          <li><span>📍</span> Your City, ST</li>
+          <li><span>🕒</span> Mon–Sat · 9am – 6pm</li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email or Phone</label>
+          <input type="text" id="email" name="email" placeholder="How should Junior reach you?" required />
+        </div>
+        <div class="field">
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Kitchen Knife</option>
+            <option>Whetstone Premium</option>
+            <option>Swords &amp; Axes</option>
+            <option>Not sure — need a quote</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qty">How many blades?</label>
+          <input type="number" id="qty" name="qty" min="1" value="1" />
+        </div>
+        <div class="field full">
+          <label for="msg">Tell me about your blades</label>
+          <textarea id="msg" name="msg" rows="4" placeholder="Brand, condition, any chips..."></textarea>
+        </div>
+        <p class="estimate full" id="estimate">Estimated: <strong>$8</strong></p>
+        <button type="submit" class="btn full">Send Request</button>
+        <p class="form-status full" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <a href="#home" class="logo"><span class="logo-mark">⚔</span><span>JUNIOR'S <em>EDGE</em></span></a>
+    <p>Sharpened by hand. Built to cut.</p>
+    <p class="copy">&copy; <span id="year"></span> Junior's Edge. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
