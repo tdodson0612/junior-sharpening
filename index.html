@@ -5,36 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Junior's Edge | Professional Knife & Blade Sharpening</title>
   <meta name="description" content="Junior's Edge — hand sharpening for kitchen knives, Japanese blades, swords and axes." />
+  <meta name="theme-color" content="#0c0b0a" />
+  <!-- Lets CSS hide not-yet-revealed content only when JavaScript is running -->
+  <script>document.documentElement.classList.add("js");</script>
+  <!-- Start the hero photo download right away (largest element on first screen) -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+        imagesrcset="images/sharpening-master-480.avif 480w, images/sharpening-master-960.avif 960w, images/sharpening-master-1408.avif 1408w"
+        imagesizes="100vw" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <a href="#main" class="skip-link">Skip to content</a>
+
   <!-- ===== NAVBAR ===== -->
   <header class="nav" id="nav">
-    <a href="#home" class="logo">
-      <span class="logo-mark">⚔</span>
-      <span>JUNIOR'S <em>EDGE</em></span>
+    <a href="#home" class="logo" aria-label="Junior's Edge, back to top">
+      <span class="logo-mark" aria-hidden="true">⚔</span>
+      <span aria-hidden="true">JUNIOR'S <em>EDGE</em></span>
     </a>
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#gallery">Gallery</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact" class="btn btn-small">Book Now</a>
     </nav>
-    <button class="burger" id="burger" aria-label="Open menu">
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </header>
 
+  <main id="main" tabindex="-1">
+
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <div class="hero-bg" style="background-image:url('images/sharpening-master.jpg')"></div>
+    <div class="hero-bg media lqip-sharpening-master" data-parallax="-0.3">
+      <picture>
+        <source type="image/avif" srcset="images/sharpening-master-480.avif 480w, images/sharpening-master-960.avif 960w, images/sharpening-master-1408.avif 1408w" sizes="100vw" />
+        <source type="image/webp" srcset="images/sharpening-master-480.webp 480w, images/sharpening-master-960.webp 960w, images/sharpening-master-1408.webp 1408w" sizes="100vw" />
+        <img src="images/sharpening-master.jpg" alt="Craftsman sharpening a chef's knife on a whetstone" width="1408" height="768" fetchpriority="high" decoding="async" data-full="images/sharpening-master-1408" />
+      </picture>
+    </div>
     <div class="hero-overlay"></div>
-    <canvas id="sparks"></canvas>
+    <canvas id="sparks" aria-hidden="true"></canvas>
     <div class="hero-content">
       <p class="eyebrow">Hand-Sharpened · Whetstone Finished</p>
       <h1>
@@ -50,47 +67,71 @@
         <a href="#gallery" class="btn btn-ghost">See The Work</a>
       </div>
     </div>
-    <a href="#services" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    <a href="#services" class="scroll-cue" aria-label="Scroll to services"><span></span></a>
   </section>
 
   <!-- ===== STATS STRIP ===== -->
-  <section class="stats">
-    <div class="stat reveal"><span class="num" data-count="5000">0</span><span class="label">Blades Sharpened</span></div>
-    <div class="stat reveal"><span class="num" data-count="15">0</span><span class="label">Grit Stages</span></div>
-    <div class="stat reveal"><span class="num" data-count="100">0</span><span class="label">% Hand Finished</span></div>
-    <div class="stat reveal"><span class="num" data-count="48">0</span><span class="label">Hour Turnaround</span></div>
+  <section class="stats" aria-label="Shop numbers">
+    <div class="stat reveal"><span class="num" data-count="5000" aria-hidden="true">5,000+</span><span class="sr-only">5,000+</span><span class="label">Blades Sharpened</span></div>
+    <div class="stat reveal"><span class="num" data-count="15" aria-hidden="true">15</span><span class="sr-only">15</span><span class="label">Grit Stages</span></div>
+    <div class="stat reveal"><span class="num" data-count="100" aria-hidden="true">100</span><span class="sr-only">100</span><span class="label">% Hand Finished</span></div>
+    <div class="stat reveal"><span class="num" data-count="48" aria-hidden="true">48</span><span class="sr-only">48</span><span class="label">Hour Turnaround</span></div>
   </section>
 
   <!-- ===== SERVICES ===== -->
   <section class="section" id="services">
     <div class="section-head reveal">
       <p class="eyebrow">What I Sharpen</p>
-      <h2>If It Cuts, <span class="accent">I Edge It.</span></h2>
+      <h2 class="split">If It Cuts, <span class="accent">I Edge It.</span></h2>
     </div>
     <div class="cards">
       <article class="card reveal">
-        <div class="card-img" style="background-image:url('images/chef-knife.jpg')"></div>
+        <div class="card-img media lqip-chef-knife">
+          <picture>
+        <source type="image/avif" srcset="images/chef-knife-480.avif 480w, images/chef-knife-960.avif 960w, images/chef-knife-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/chef-knife-480.webp 480w, images/chef-knife-960.webp 960w, images/chef-knife-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <img src="images/chef-knife.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/chef-knife-1408" />
+      </picture>
+        </div>
         <div class="card-body">
           <h3>Kitchen Knives</h3>
           <p>Chef's knives, santokus, paring and bread knives restored to a razor edge that glides through tomatoes.</p>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img" style="background-image:url('images/katana-dojo.jpg')"></div>
+        <div class="card-img media lqip-katana-dojo">
+          <picture>
+        <source type="image/avif" srcset="images/katana-dojo-480.avif 480w, images/katana-dojo-960.avif 960w, images/katana-dojo-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/katana-dojo-480.webp 480w, images/katana-dojo-960.webp 960w, images/katana-dojo-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <img src="images/katana-dojo.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/katana-dojo-1408" />
+      </picture>
+        </div>
         <div class="card-body">
           <h3>Japanese Blades</h3>
           <p>Single and double bevel knives and katanas, finished on traditional water stones with respect for the steel.</p>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img" style="background-image:url('images/viking-sword.jpg')"></div>
+        <div class="card-img media lqip-viking-sword">
+          <picture>
+        <source type="image/avif" srcset="images/viking-sword-480.avif 480w, images/viking-sword-960.avif 960w, images/viking-sword-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/viking-sword-480.webp 480w, images/viking-sword-960.webp 960w, images/viking-sword-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <img src="images/viking-sword.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-sword-1408" />
+      </picture>
+        </div>
         <div class="card-body">
           <h3>Swords &amp; Daggers</h3>
           <p>Display pieces, reenactment gear and collector swords — sharpened, polished or rust-restored.</p>
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img" style="background-image:url('images/viking-axe.jpg')"></div>
+        <div class="card-img media lqip-viking-axe">
+          <picture>
+        <source type="image/avif" srcset="images/viking-axe-480.avif 480w, images/viking-axe-960.avif 960w, images/viking-axe-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/viking-axe-480.webp 480w, images/viking-axe-960.webp 960w, images/viking-axe-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <img src="images/viking-axe.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-axe-1408" />
+      </picture>
+        </div>
         <div class="card-body">
           <h3>Axes &amp; Tools</h3>
           <p>Hatchets, splitting axes, machetes and garden tools ground true and ready for hard work.</p>
@@ -101,31 +142,37 @@
 
   <!-- ===== PROCESS ===== -->
   <section class="section process-section" id="process">
-    <div class="process-bg" style="background-image:url('images/sushi-knife.jpg')"></div>
+    <div class="process-bg media lqip-sushi-knife" data-parallax="0.15">
+      <picture>
+        <source type="image/avif" srcset="images/sushi-knife-480.avif 480w, images/sushi-knife-960.avif 960w, images/sushi-knife-1408.avif 1408w" sizes="100vw" />
+        <source type="image/webp" srcset="images/sushi-knife-480.webp 480w, images/sushi-knife-960.webp 960w, images/sushi-knife-1408.webp 1408w" sizes="100vw" />
+        <img src="images/sushi-knife.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/sushi-knife-1408" />
+      </picture>
+    </div>
     <div class="process-overlay"></div>
     <div class="process-inner">
       <div class="section-head reveal">
         <p class="eyebrow">The Ritual</p>
-        <h2>Four Steps To <span class="accent">Lethal.</span></h2>
+        <h2 class="split">Four Steps To <span class="accent">Lethal.</span></h2>
       </div>
       <ol class="steps">
         <li class="step reveal">
-          <span class="step-num">01</span>
+          <span class="step-num" aria-hidden="true">01</span>
           <h3>Inspect</h3>
           <p>Every blade is checked for chips, rolls and bevel angle before a stone ever touches it.</p>
         </li>
         <li class="step reveal">
-          <span class="step-num">02</span>
+          <span class="step-num" aria-hidden="true">02</span>
           <h3>Reprofile</h3>
           <p>Coarse stones repair damage and set a consistent edge geometry matched to the steel.</p>
         </li>
         <li class="step reveal">
-          <span class="step-num">03</span>
+          <span class="step-num" aria-hidden="true">03</span>
           <h3>Refine</h3>
           <p>Progressively finer grits remove scratches and build a keen, durable cutting edge.</p>
         </li>
         <li class="step reveal">
-          <span class="step-num">04</span>
+          <span class="step-num" aria-hidden="true">04</span>
           <h3>Hone &amp; Test</h3>
           <p>Stropped to a mirror finish and paper-tested. If it doesn't shave, it doesn't leave.</p>
         </li>
@@ -137,73 +184,117 @@
   <section class="section" id="gallery">
     <div class="section-head reveal">
       <p class="eyebrow">The Armory</p>
-      <h2>Blades That <span class="accent">Came Back Deadly.</span></h2>
+      <h2 class="split">Blades That <span class="accent">Came Back Deadly.</span></h2>
     </div>
 
-    <div class="filters reveal" id="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="viking">Viking</button>
-      <button class="filter" data-filter="japanese">Japanese</button>
-      <button class="filter" data-filter="kitchen">Kitchen</button>
-      <button class="filter" data-filter="collector">Collector</button>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filter gallery">
+      <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter" data-filter="viking" aria-pressed="false">Viking</button>
+      <button type="button" class="filter" data-filter="japanese" aria-pressed="false">Japanese</button>
+      <button type="button" class="filter" data-filter="kitchen" aria-pressed="false">Kitchen</button>
+      <button type="button" class="filter" data-filter="collector" aria-pressed="false">Collector</button>
     </div>
+    <p class="sr-only" id="galleryStatus" role="status" aria-live="polite"></p>
 
     <div class="gallery" id="galleryGrid">
       <figure class="g-item wide" data-cat="viking">
-        <img src="images/viking-dagger.jpg" alt="Damascus Viking dagger with runes and brass hilt" loading="lazy" />
+        <button type="button" class="g-open media lqip-viking-dagger" aria-label="View larger: Rune-Etched Damascus Dagger">
+          <picture>
+        <source type="image/avif" srcset="images/viking-dagger-480.avif 480w, images/viking-dagger-960.avif 960w, images/viking-dagger-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 50vw" />
+        <source type="image/webp" srcset="images/viking-dagger-480.webp 480w, images/viking-dagger-960.webp 960w, images/viking-dagger-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 50vw" />
+        <img src="images/viking-dagger.jpg" alt="Damascus Viking dagger with runes and brass hilt" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-dagger-1408" />
+      </picture>
+        </button>
         <figcaption>Rune-Etched Damascus Dagger</figcaption>
       </figure>
       <figure class="g-item" data-cat="viking">
-        <img src="images/viking-sword.jpg" alt="Viking sword on a dockside table at dusk" loading="lazy" />
+        <button type="button" class="g-open media lqip-viking-sword" aria-label="View larger: Longship Sword">
+          <picture>
+        <source type="image/avif" srcset="images/viking-sword-480.avif 480w, images/viking-sword-960.avif 960w, images/viking-sword-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/viking-sword-480.webp 480w, images/viking-sword-960.webp 960w, images/viking-sword-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <img src="images/viking-sword.jpg" alt="Viking sword on a dockside table at dusk" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-sword-1408" />
+      </picture>
+        </button>
         <figcaption>Longship Sword</figcaption>
       </figure>
       <figure class="g-item" data-cat="viking">
-        <img src="images/viking-axe.jpg" alt="Bronze bearded axe resting on a mossy rock" loading="lazy" />
+        <button type="button" class="g-open media lqip-viking-axe" aria-label="View larger: Bearded War Axe">
+          <picture>
+        <source type="image/avif" srcset="images/viking-axe-480.avif 480w, images/viking-axe-960.avif 960w, images/viking-axe-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/viking-axe-480.webp 480w, images/viking-axe-960.webp 960w, images/viking-axe-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <img src="images/viking-axe.jpg" alt="Bronze bearded axe resting on a mossy rock" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-axe-1408" />
+      </picture>
+        </button>
         <figcaption>Bearded War Axe</figcaption>
       </figure>
       <figure class="g-item tall" data-cat="japanese">
-        <img src="images/katana-dojo.jpg" alt="Katana on a black stand in a dojo" loading="lazy" />
+        <button type="button" class="g-open media lqip-katana-dojo" aria-label="View larger: Dojo Katana">
+          <picture>
+        <source type="image/avif" srcset="images/katana-dojo-480.avif 480w, images/katana-dojo-960.avif 960w, images/katana-dojo-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/katana-dojo-480.webp 480w, images/katana-dojo-960.webp 960w, images/katana-dojo-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <img src="images/katana-dojo.jpg" alt="Katana on a black stand in a dojo" width="1408" height="768" loading="lazy" decoding="async" data-full="images/katana-dojo-1408" />
+      </picture>
+        </button>
         <figcaption>Dojo Katana</figcaption>
       </figure>
       <figure class="g-item wide" data-cat="japanese">
-        <img src="images/katana-stand.jpg" alt="Katana and saya displayed on a wooden stand" loading="lazy" />
+        <button type="button" class="g-open media lqip-katana-stand" aria-label="View larger: Display Katana">
+          <picture>
+        <source type="image/avif" srcset="images/katana-stand-480.avif 480w, images/katana-stand-960.avif 960w, images/katana-stand-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 50vw" />
+        <source type="image/webp" srcset="images/katana-stand-480.webp 480w, images/katana-stand-960.webp 960w, images/katana-stand-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 50vw" />
+        <img src="images/katana-stand.jpg" alt="Katana and saya displayed on a wooden stand" width="1408" height="768" loading="lazy" decoding="async" data-full="images/katana-stand-1408" />
+      </picture>
+        </button>
         <figcaption>Display Katana</figcaption>
       </figure>
       <figure class="g-item" data-cat="kitchen collector">
-        <img src="images/chef-knife.jpg" alt="Jeweled Damascus chef's knife on a walnut stand" loading="lazy" />
+        <button type="button" class="g-open media lqip-chef-knife" aria-label="View larger: Jeweled Chef's Knife">
+          <picture>
+        <source type="image/avif" srcset="images/chef-knife-480.avif 480w, images/chef-knife-960.avif 960w, images/chef-knife-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/chef-knife-480.webp 480w, images/chef-knife-960.webp 960w, images/chef-knife-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <img src="images/chef-knife.jpg" alt="Jeweled Damascus chef's knife on a walnut stand" width="1408" height="768" loading="lazy" decoding="async" data-full="images/chef-knife-1408" />
+      </picture>
+        </button>
         <figcaption>Jeweled Chef's Knife</figcaption>
       </figure>
       <figure class="g-item" data-cat="kitchen japanese">
-        <img src="images/sharpening-master.jpg" alt="Craftsman sharpening a knife on a whetstone" loading="lazy" />
+        <button type="button" class="g-open media lqip-sharpening-master" aria-label="View larger: On The Whetstone">
+          <picture>
+        <source type="image/avif" srcset="images/sharpening-master-480.avif 480w, images/sharpening-master-960.avif 960w, images/sharpening-master-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <source type="image/webp" srcset="images/sharpening-master-480.webp 480w, images/sharpening-master-960.webp 960w, images/sharpening-master-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 900px) 45vw, 25vw" />
+        <img src="images/sharpening-master.jpg" alt="Craftsman sharpening a knife on a whetstone" width="1408" height="768" loading="lazy" decoding="async" data-full="images/sharpening-master-1408" />
+      </picture>
+        </button>
         <figcaption>On The Whetstone</figcaption>
       </figure>
       <figure class="g-item wide" data-cat="kitchen japanese">
-        <img src="images/sushi-knife.jpg" alt="Gold-engraved Damascus sushi knife on a whetstone" loading="lazy" />
+        <button type="button" class="g-open media lqip-sushi-knife" aria-label="View larger: Gold-Engraved Sushi Knife">
+          <picture>
+        <source type="image/avif" srcset="images/sushi-knife-480.avif 480w, images/sushi-knife-960.avif 960w, images/sushi-knife-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 50vw" />
+        <source type="image/webp" srcset="images/sushi-knife-480.webp 480w, images/sushi-knife-960.webp 960w, images/sushi-knife-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 50vw" />
+        <img src="images/sushi-knife.jpg" alt="Gold-engraved Damascus sushi knife on a whetstone" width="1408" height="768" loading="lazy" decoding="async" data-full="images/sushi-knife-1408" />
+      </picture>
+        </button>
         <figcaption>Gold-Engraved Sushi Knife</figcaption>
       </figure>
       <figure class="g-item panorama" data-cat="collector">
-        <img src="images/scimitar.jpg" alt="Mirror-polished scimitar with gold hilt in a display case" loading="lazy" />
+        <button type="button" class="g-open media lqip-scimitar" aria-label="View larger: Mirror-Polished Scimitar">
+          <picture>
+        <source type="image/avif" srcset="images/scimitar-480.avif 480w, images/scimitar-960.avif 960w, images/scimitar-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 100vw" />
+        <source type="image/webp" srcset="images/scimitar-480.webp 480w, images/scimitar-960.webp 960w, images/scimitar-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 100vw" />
+        <img src="images/scimitar.jpg" alt="Mirror-polished scimitar with gold hilt in a display case" width="1408" height="768" loading="lazy" decoding="async" data-full="images/scimitar-1408" />
+      </picture>
+        </button>
         <figcaption>Mirror-Polished Scimitar</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- ===== LIGHTBOX ===== -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
-    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
-    <figure>
-      <img id="lbImg" src="" alt="" />
-      <figcaption id="lbCap"></figcaption>
-    </figure>
-    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#10095;</button>
-  </div>
-
   <!-- ===== PRICING ===== -->
   <section class="section" id="pricing">
     <div class="section-head reveal">
       <p class="eyebrow">Straight Prices</p>
-      <h2>Pick Your <span class="accent">Weapon.</span></h2>
+      <h2 class="split">Pick Your <span class="accent">Weapon.</span></h2>
     </div>
     <div class="pricing">
       <div class="price-card reveal">
@@ -247,25 +338,25 @@
     <div class="contact-wrap">
       <div class="contact-info reveal">
         <p class="eyebrow">Drop It Off</p>
-        <h2>Ready To <span class="accent">Get Sharp?</span></h2>
+        <h2 class="split">Ready To <span class="accent">Get Sharp?</span></h2>
         <p>Send a message with what you've got and Junior will get back to you with a quote and drop-off time.</p>
         <ul class="contact-list">
           <!-- TODO: replace with Junior's real details -->
-          <li><span>📞</span> (555) 123-4567</li>
-          <li><span>✉️</span> junior@juniorsedge.com</li>
-          <li><span>📍</span> Your City, ST</li>
-          <li><span>🕒</span> Mon–Sat · 9am – 6pm</li>
+          <li><span aria-hidden="true">📞</span> (555) 123-4567</li>
+          <li><span aria-hidden="true">✉️</span> junior@juniorsedge.com</li>
+          <li><span aria-hidden="true">📍</span> Your City, ST</li>
+          <li><span aria-hidden="true">🕒</span> Mon–Sat · 9am – 6pm</li>
         </ul>
       </div>
 
       <form class="contact-form reveal" id="contactForm" novalidate>
         <div class="field">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
         </div>
         <div class="field">
           <label for="email">Email or Phone</label>
-          <input type="text" id="email" name="email" placeholder="How should Junior reach you?" required />
+          <input type="text" id="email" name="email" placeholder="How should Junior reach you?" autocomplete="email" required />
         </div>
         <div class="field">
           <label for="service">Service</label>
@@ -278,26 +369,39 @@
         </div>
         <div class="field">
           <label for="qty">How many blades?</label>
-          <input type="number" id="qty" name="qty" min="1" value="1" />
+          <input type="number" id="qty" name="qty" min="1" value="1" inputmode="numeric" />
         </div>
         <div class="field full">
           <label for="msg">Tell me about your blades</label>
           <textarea id="msg" name="msg" rows="4" placeholder="Brand, condition, any chips..."></textarea>
         </div>
-        <p class="estimate full" id="estimate">Estimated: <strong>$8</strong></p>
+        <p class="estimate full" id="estimate" aria-live="polite">Estimated: <strong>$8</strong></p>
         <button type="submit" class="btn full">Send Request</button>
         <p class="form-status full" id="formStatus" role="status"></p>
       </form>
     </div>
   </section>
 
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" inert>
+    <button type="button" class="lb-close" id="lbClose" aria-label="Close image viewer">&times;</button>
+    <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#10094;</button>
+    <figure>
+      <img id="lbImg" src="data:," alt="" width="1408" height="768" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#10095;</button>
+  </div>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <a href="#home" class="logo"><span class="logo-mark">⚔</span><span>JUNIOR'S <em>EDGE</em></span></a>
+    <a href="#home" class="logo" aria-label="Junior's Edge, back to top"><span class="logo-mark" aria-hidden="true">⚔</span><span aria-hidden="true">JUNIOR'S <em>EDGE</em></span></a>
     <p>Sharpened by hand. Built to cut.</p>
     <p class="copy">&copy; <span id="year"></span> Junior's Edge. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
