@@ -1,6 +1,6 @@
 // =========================================================
 // JUNIOR'S EDGE — site interactions
-// Performance rules followed here: one rAF-throttled scroll loop,
+// Performance notes: one rAF-throttled scroll loop,
 // passive listeners, only transform/opacity are animated, and
 // nothing runs while it is off-screen or the tab is hidden.
 // =========================================================
@@ -22,39 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       img.addEventListener("load", done, { once: true });
       img.addEventListener("error", done, { once: true });
     }
-  });
-
-  /* ---------- Split section headings into words for the stagger reveal ---------- */
-  document.querySelectorAll(".split").forEach(heading => {
-    const label = heading.textContent.replace(/\s+/g, " ").trim();
-    const frag = document.createDocumentFragment();
-    let i = 0;
-    const addWords = (text, accent) => {
-      text.split(/(\s+)/).forEach(part => {
-        if (!part) return;
-        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
-        const outer = document.createElement("span");
-        outer.className = "w";
-        const inner = document.createElement("span");
-        inner.className = accent ? "wi accent" : "wi";
-        inner.style.setProperty("--i", i++);
-        inner.textContent = part;
-        outer.appendChild(inner);
-        frag.appendChild(outer);
-      });
-    };
-    heading.childNodes.forEach(node => {
-      if (node.nodeType === Node.TEXT_NODE) addWords(node.textContent, false);
-      else addWords(node.textContent, node.classList?.contains("accent"));
-    });
-    // Screen readers get the whole heading as one phrase, not word fragments
-    const visual = document.createElement("span");
-    visual.setAttribute("aria-hidden", "true");
-    visual.appendChild(frag);
-    const spoken = document.createElement("span");
-    spoken.className = "sr-only";
-    spoken.textContent = label;
-    heading.replaceChildren(spoken, visual);
   });
 
   /* ---------- Navbar: backdrop after hero, hide on scroll down, show on scroll up ---------- */
@@ -149,31 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.15 });
   document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
-
-  /* ---------- Animated stat counters ---------- */
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = +el.dataset.count;
-      const suffix = target >= 1000 ? "+" : "";
-      countObserver.unobserve(el);
-      if (reduceMotion) { el.textContent = target.toLocaleString() + suffix; return; }
-      const duration = 1800;
-      const start = performance.now();
-      const tick = (now) => {
-        const p = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(eased * target).toLocaleString() + (p === 1 ? suffix : "");
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll("[data-count]").forEach(el => {
-    if (!reduceMotion) el.textContent = "0"; // HTML holds the real number for no-JS visitors
-    countObserver.observe(el);
-  });
 
   /* ---------- Grinding-wheel sparks in hero ---------- */
   const canvas = document.getElementById("sparks");

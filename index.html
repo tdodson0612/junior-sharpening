@@ -3,39 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Junior's Edge | Professional Knife & Blade Sharpening</title>
+  <title>Junior's Edge | Knife & Blade Sharpening</title>
   <meta name="description" content="Junior's Edge — hand sharpening for kitchen knives, Japanese blades, swords and axes." />
-  <meta name="theme-color" content="#0c0b0a" />
-  <!-- Lets CSS hide not-yet-revealed content only when JavaScript is running -->
+  <meta name="theme-color" content="#11100e" />
   <script>document.documentElement.classList.add("js");</script>
-  <!-- Start the hero photo download right away (largest element on first screen) -->
+  <!-- Fonts are hosted with the site (no Google Fonts call). Preload the two used above the fold. -->
+  <link rel="preload" href="fonts/big-shoulders-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" as="image" type="image/avif" fetchpriority="high"
         imagesrcset="images/sharpening-master-480.avif 480w, images/sharpening-master-960.avif 960w, images/sharpening-master-1408.avif 1408w"
         imagesizes="100vw" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- ===== NAVBAR ===== -->
   <header class="nav" id="nav">
     <a href="#home" class="logo" aria-label="Junior's Edge, back to top">
-      <span class="logo-mark" aria-hidden="true">⚔</span>
-      <span aria-hidden="true">JUNIOR'S <em>EDGE</em></span>
+      <svg class="logo-mark" viewBox="0 0 44 14" aria-hidden="true" focusable="false">
+        <path d="M0 5.2h12.5v3.6H0z" />
+        <path d="M14 3.4h20.5c3.8 0 6.9 1.3 9.5 3.3-4.6 2.6-12.4 3.9-30 3.9z" />
+        <circle cx="3.5" cy="7" r=".9" class="rivet" />
+        <circle cx="8.5" cy="7" r=".9" class="rivet" />
+      </svg>
+      <span class="logo-text" aria-hidden="true">Junior's Edge</span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#gallery">Gallery</a>
       <a href="#pricing">Pricing</a>
-      <a href="#contact" class="btn btn-small">Book Now</a>
+      <a href="#contact" class="nav-book">Book now</a>
     </nav>
     <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
+      <span></span><span></span>
     </button>
   </header>
 
@@ -43,137 +45,127 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <div class="hero-bg media lqip-sharpening-master" data-parallax="-0.3">
+    <div class="hero-bg media lqip-sharpening-master" data-parallax="-0.25">
       <picture>
         <source type="image/avif" srcset="images/sharpening-master-480.avif 480w, images/sharpening-master-960.avif 960w, images/sharpening-master-1408.avif 1408w" sizes="100vw" />
         <source type="image/webp" srcset="images/sharpening-master-480.webp 480w, images/sharpening-master-960.webp 960w, images/sharpening-master-1408.webp 1408w" sizes="100vw" />
         <img src="images/sharpening-master.jpg" alt="Craftsman sharpening a chef's knife on a whetstone" width="1408" height="768" fetchpriority="high" decoding="async" data-full="images/sharpening-master-1408" />
       </picture>
     </div>
-    <div class="hero-overlay"></div>
+    <div class="hero-shade"></div>
     <canvas id="sparks" aria-hidden="true"></canvas>
+
     <div class="hero-content">
-      <p class="eyebrow">Hand-Sharpened · Whetstone Finished</p>
-      <h1>
-        <span class="line">Dull Blades</span>
-        <span class="line accent">Die Here.</span>
-      </h1>
+      <p class="tag">Hand-sharpened &middot; whetstone finished</p>
+      <h1>Dull blades<br />die here.</h1>
       <p class="hero-sub">
         From your everyday chef's knife to katanas, Viking axes and heirloom swords —
         Junior brings every edge back sharper than the day it was forged.
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="btn">Get It Sharpened</a>
-        <a href="#gallery" class="btn btn-ghost">See The Work</a>
+        <a href="#contact" class="btn">Get it sharpened</a>
+        <a href="#gallery" class="text-link">See the work</a>
       </div>
     </div>
-    <a href="#services" class="scroll-cue" aria-label="Scroll to services"><span></span></a>
-  </section>
 
-  <!-- ===== STATS STRIP ===== -->
-  <section class="stats" aria-label="Shop numbers">
-    <div class="stat reveal"><span class="num" data-count="5000" aria-hidden="true">5,000+</span><span class="sr-only">5,000+</span><span class="label">Blades Sharpened</span></div>
-    <div class="stat reveal"><span class="num" data-count="15" aria-hidden="true">15</span><span class="sr-only">15</span><span class="label">Grit Stages</span></div>
-    <div class="stat reveal"><span class="num" data-count="100" aria-hidden="true">100</span><span class="sr-only">100</span><span class="label">% Hand Finished</span></div>
-    <div class="stat reveal"><span class="num" data-count="48" aria-hidden="true">48</span><span class="sr-only">48</span><span class="label">Hour Turnaround</span></div>
+    <ul class="facts" aria-label="Shop numbers">
+      <li><b>5,000+</b> blades sharpened</li>
+      <li><b>15</b> grit stages</li>
+      <li><b>100%</b> hand finished</li>
+      <li><b>48 hr</b> turnaround</li>
+    </ul>
   </section>
 
   <!-- ===== SERVICES ===== -->
   <section class="section" id="services">
-    <div class="section-head reveal">
-      <p class="eyebrow">What I Sharpen</p>
-      <h2 class="split">If It Cuts, <span class="accent">I Edge It.</span></h2>
+    <div class="sec-head reveal">
+      <h2>What I sharpen</h2>
+      <p class="sec-aside">If it cuts, I edge it.</p>
     </div>
-    <div class="cards">
-      <article class="card reveal">
-        <div class="card-img media lqip-chef-knife">
+
+    <ul class="svc-list">
+      <li class="svc reveal">
+        <div class="svc-img media lqip-chef-knife">
           <picture>
-        <source type="image/avif" srcset="images/chef-knife-480.avif 480w, images/chef-knife-960.avif 960w, images/chef-knife-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
-        <source type="image/webp" srcset="images/chef-knife-480.webp 480w, images/chef-knife-960.webp 960w, images/chef-knife-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/avif" srcset="images/chef-knife-480.avif 480w, images/chef-knife-960.avif 960w, images/chef-knife-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 220px" />
+        <source type="image/webp" srcset="images/chef-knife-480.webp 480w, images/chef-knife-960.webp 960w, images/chef-knife-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 220px" />
         <img src="images/chef-knife.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/chef-knife-1408" />
       </picture>
         </div>
-        <div class="card-body">
-          <h3>Kitchen Knives</h3>
-          <p>Chef's knives, santokus, paring and bread knives restored to a razor edge that glides through tomatoes.</p>
-        </div>
-      </article>
-      <article class="card reveal">
-        <div class="card-img media lqip-katana-dojo">
+        <h3>Kitchen knives</h3>
+        <p>Chef's knives, santokus, paring and bread knives restored to a razor edge that glides through tomatoes.</p>
+      </li>
+      <li class="svc reveal">
+        <div class="svc-img media lqip-katana-dojo">
           <picture>
-        <source type="image/avif" srcset="images/katana-dojo-480.avif 480w, images/katana-dojo-960.avif 960w, images/katana-dojo-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
-        <source type="image/webp" srcset="images/katana-dojo-480.webp 480w, images/katana-dojo-960.webp 960w, images/katana-dojo-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/avif" srcset="images/katana-dojo-480.avif 480w, images/katana-dojo-960.avif 960w, images/katana-dojo-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 220px" />
+        <source type="image/webp" srcset="images/katana-dojo-480.webp 480w, images/katana-dojo-960.webp 960w, images/katana-dojo-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 220px" />
         <img src="images/katana-dojo.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/katana-dojo-1408" />
       </picture>
         </div>
-        <div class="card-body">
-          <h3>Japanese Blades</h3>
-          <p>Single and double bevel knives and katanas, finished on traditional water stones with respect for the steel.</p>
-        </div>
-      </article>
-      <article class="card reveal">
-        <div class="card-img media lqip-viking-sword">
+        <h3>Japanese blades</h3>
+        <p>Single and double bevel knives and katanas, finished on traditional water stones with respect for the steel.</p>
+      </li>
+      <li class="svc reveal">
+        <div class="svc-img media lqip-viking-sword">
           <picture>
-        <source type="image/avif" srcset="images/viking-sword-480.avif 480w, images/viking-sword-960.avif 960w, images/viking-sword-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
-        <source type="image/webp" srcset="images/viking-sword-480.webp 480w, images/viking-sword-960.webp 960w, images/viking-sword-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/avif" srcset="images/viking-sword-480.avif 480w, images/viking-sword-960.avif 960w, images/viking-sword-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 220px" />
+        <source type="image/webp" srcset="images/viking-sword-480.webp 480w, images/viking-sword-960.webp 960w, images/viking-sword-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 220px" />
         <img src="images/viking-sword.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-sword-1408" />
       </picture>
         </div>
-        <div class="card-body">
-          <h3>Swords &amp; Daggers</h3>
-          <p>Display pieces, reenactment gear and collector swords — sharpened, polished or rust-restored.</p>
-        </div>
-      </article>
-      <article class="card reveal">
-        <div class="card-img media lqip-viking-axe">
+        <h3>Swords &amp; daggers</h3>
+        <p>Display pieces, reenactment gear and collector swords — sharpened, polished or rust-restored.</p>
+      </li>
+      <li class="svc reveal">
+        <div class="svc-img media lqip-viking-axe">
           <picture>
-        <source type="image/avif" srcset="images/viking-axe-480.avif 480w, images/viking-axe-960.avif 960w, images/viking-axe-1408.avif 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
-        <source type="image/webp" srcset="images/viking-axe-480.webp 480w, images/viking-axe-960.webp 960w, images/viking-axe-1408.webp 1408w" sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 25vw" />
+        <source type="image/avif" srcset="images/viking-axe-480.avif 480w, images/viking-axe-960.avif 960w, images/viking-axe-1408.avif 1408w" sizes="(max-width: 720px) 90vw, 220px" />
+        <source type="image/webp" srcset="images/viking-axe-480.webp 480w, images/viking-axe-960.webp 960w, images/viking-axe-1408.webp 1408w" sizes="(max-width: 720px) 90vw, 220px" />
         <img src="images/viking-axe.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/viking-axe-1408" />
       </picture>
         </div>
-        <div class="card-body">
-          <h3>Axes &amp; Tools</h3>
-          <p>Hatchets, splitting axes, machetes and garden tools ground true and ready for hard work.</p>
-        </div>
-      </article>
-    </div>
+        <h3>Axes &amp; tools</h3>
+        <p>Hatchets, splitting axes, machetes and garden tools ground true and ready for hard work.</p>
+      </li>
+    </ul>
   </section>
 
   <!-- ===== PROCESS ===== -->
-  <section class="section process-section" id="process">
-    <div class="process-bg media lqip-sushi-knife" data-parallax="0.15">
+  <section class="section process" id="process">
+    <div class="process-bg media lqip-sushi-knife" data-parallax="0.12">
       <picture>
         <source type="image/avif" srcset="images/sushi-knife-480.avif 480w, images/sushi-knife-960.avif 960w, images/sushi-knife-1408.avif 1408w" sizes="100vw" />
         <source type="image/webp" srcset="images/sushi-knife-480.webp 480w, images/sushi-knife-960.webp 960w, images/sushi-knife-1408.webp 1408w" sizes="100vw" />
         <img src="images/sushi-knife.jpg" alt="" width="1408" height="768" loading="lazy" decoding="async" data-full="images/sushi-knife-1408" />
       </picture>
     </div>
-    <div class="process-overlay"></div>
+    <div class="process-shade"></div>
     <div class="process-inner">
-      <div class="section-head reveal">
-        <p class="eyebrow">The Ritual</p>
-        <h2 class="split">Four Steps To <span class="accent">Lethal.</span></h2>
+      <div class="sec-head reveal">
+        <h2>How I do it</h2>
+        <p class="sec-aside">Four steps to lethal.</p>
       </div>
+
+      <div class="grit reveal" aria-hidden="true">
+        <span>Coarse</span><i></i><span>Fine</span>
+      </div>
+
       <ol class="steps">
         <li class="step reveal">
-          <span class="step-num" aria-hidden="true">01</span>
           <h3>Inspect</h3>
           <p>Every blade is checked for chips, rolls and bevel angle before a stone ever touches it.</p>
         </li>
         <li class="step reveal">
-          <span class="step-num" aria-hidden="true">02</span>
           <h3>Reprofile</h3>
           <p>Coarse stones repair damage and set a consistent edge geometry matched to the steel.</p>
         </li>
         <li class="step reveal">
-          <span class="step-num" aria-hidden="true">03</span>
           <h3>Refine</h3>
           <p>Progressively finer grits remove scratches and build a keen, durable cutting edge.</p>
         </li>
         <li class="step reveal">
-          <span class="step-num" aria-hidden="true">04</span>
-          <h3>Hone &amp; Test</h3>
+          <h3>Hone &amp; test</h3>
           <p>Stropped to a mirror finish and paper-tested. If it doesn't shave, it doesn't leave.</p>
         </li>
       </ol>
@@ -182,9 +174,9 @@
 
   <!-- ===== GALLERY ===== -->
   <section class="section" id="gallery">
-    <div class="section-head reveal">
-      <p class="eyebrow">The Armory</p>
-      <h2 class="split">Blades That <span class="accent">Came Back Deadly.</span></h2>
+    <div class="sec-head reveal">
+      <h2>From the bench</h2>
+      <p class="sec-aside">Blades that came back deadly.</p>
     </div>
 
     <div class="filters reveal" id="filters" role="group" aria-label="Filter gallery">
@@ -290,63 +282,76 @@
     </div>
   </section>
 
-  <!-- ===== PRICING ===== -->
-  <section class="section" id="pricing">
-    <div class="section-head reveal">
-      <p class="eyebrow">Straight Prices</p>
-      <h2 class="split">Pick Your <span class="accent">Weapon.</span></h2>
+  <!-- ===== PRICING (printed price list look) ===== -->
+  <section class="section paper" id="pricing">
+    <div class="paper-inner">
+      <div class="sec-head reveal">
+        <h2>Prices</h2>
+        <p class="sec-aside">Pick your weapon.</p>
+      </div>
+
+      <div class="price-list">
+        <div class="price-row reveal">
+          <div class="pr-line">
+            <h3>Kitchen knife</h3>
+            <span class="leader" aria-hidden="true"></span>
+            <p class="pr-amt">$8 <small>/ blade</small></p>
+          </div>
+          <ul class="pr-detail">
+            <li>Standard edge, up to 10"</li>
+            <li>Burr removal &amp; hone</li>
+            <li>Paper-tested</li>
+          </ul>
+          <a href="#contact" class="pr-book" data-service="Kitchen Knife">Book this</a>
+        </div>
+
+        <div class="price-row featured reveal">
+          <div class="pr-line">
+            <h3>Whetstone premium <span class="pr-flag">Most popular</span></h3>
+            <span class="leader" aria-hidden="true"></span>
+            <p class="pr-amt">$20 <small>/ blade</small></p>
+          </div>
+          <ul class="pr-detail">
+            <li>Full hand-stone progression</li>
+            <li>Japanese &amp; high-carbon steel</li>
+            <li>Chip &amp; tip repair</li>
+            <li>Mirror strop finish</li>
+          </ul>
+          <a href="#contact" class="pr-book" data-service="Whetstone Premium">Book this</a>
+        </div>
+
+        <div class="price-row reveal">
+          <div class="pr-line">
+            <h3>Swords &amp; axes</h3>
+            <span class="leader" aria-hidden="true"></span>
+            <p class="pr-amt">$35+ <small>/ piece</small></p>
+          </div>
+          <ul class="pr-detail">
+            <li>Katanas, swords, daggers</li>
+            <li>Axes &amp; machetes</li>
+            <li>Rust removal &amp; polish</li>
+          </ul>
+          <a href="#contact" class="pr-book" data-service="Swords & Axes">Book this</a>
+        </div>
+      </div>
+
+      <p class="price-note">Prices are starting points — Junior will quote heavily damaged or specialty blades before any work begins.</p>
     </div>
-    <div class="pricing">
-      <div class="price-card reveal">
-        <h3>Kitchen Knife</h3>
-        <p class="price">$<span>8</span><small>/ blade</small></p>
-        <ul>
-          <li>Standard edge, up to 10"</li>
-          <li>Burr removal &amp; hone</li>
-          <li>Paper-tested</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost" data-service="Kitchen Knife">Book</a>
-      </div>
-      <div class="price-card featured reveal">
-        <span class="badge">Most Popular</span>
-        <h3>Whetstone Premium</h3>
-        <p class="price">$<span>20</span><small>/ blade</small></p>
-        <ul>
-          <li>Full hand-stone progression</li>
-          <li>Japanese &amp; high-carbon steel</li>
-          <li>Chip &amp; tip repair</li>
-          <li>Mirror strop finish</li>
-        </ul>
-        <a href="#contact" class="btn" data-service="Whetstone Premium">Book</a>
-      </div>
-      <div class="price-card reveal">
-        <h3>Swords &amp; Axes</h3>
-        <p class="price">$<span>35</span><small>+ / piece</small></p>
-        <ul>
-          <li>Katanas, swords, daggers</li>
-          <li>Axes &amp; machetes</li>
-          <li>Rust removal &amp; polish</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost" data-service="Swords & Axes">Book</a>
-      </div>
-    </div>
-    <p class="price-note">Prices are starting points — Junior will quote heavily damaged or specialty blades before any work begins.</p>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section class="section contact-section" id="contact">
+  <section class="section contact" id="contact">
     <div class="contact-wrap">
       <div class="contact-info reveal">
-        <p class="eyebrow">Drop It Off</p>
-        <h2 class="split">Ready To <span class="accent">Get Sharp?</span></h2>
+        <h2>Drop it off</h2>
         <p>Send a message with what you've got and Junior will get back to you with a quote and drop-off time.</p>
-        <ul class="contact-list">
-          <!-- TODO: replace with Junior's real details -->
-          <li><span aria-hidden="true">📞</span> (555) 123-4567</li>
-          <li><span aria-hidden="true">✉️</span> junior@juniorsedge.com</li>
-          <li><span aria-hidden="true">📍</span> Your City, ST</li>
-          <li><span aria-hidden="true">🕒</span> Mon–Sat · 9am – 6pm</li>
-        </ul>
+        <!-- TODO: replace with Junior's real details -->
+        <dl class="contact-list">
+          <div><dt>Phone</dt><dd>(555) 123-4567</dd></div>
+          <div><dt>Email</dt><dd>junior@juniorsedge.com</dd></div>
+          <div><dt>Where</dt><dd>Your City, ST</dd></div>
+          <div><dt>Hours</dt><dd>Mon–Sat · 9am – 6pm</dd></div>
+        </dl>
       </div>
 
       <form class="contact-form reveal" id="contactForm" novalidate>
@@ -355,7 +360,7 @@
           <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
         </div>
         <div class="field">
-          <label for="email">Email or Phone</label>
+          <label for="email">Email or phone</label>
           <input type="text" id="email" name="email" placeholder="How should Junior reach you?" autocomplete="email" required />
         </div>
         <div class="field">
@@ -375,8 +380,10 @@
           <label for="msg">Tell me about your blades</label>
           <textarea id="msg" name="msg" rows="4" placeholder="Brand, condition, any chips..."></textarea>
         </div>
-        <p class="estimate full" id="estimate" aria-live="polite">Estimated: <strong>$8</strong></p>
-        <button type="submit" class="btn full">Send Request</button>
+        <div class="form-foot full">
+          <p class="estimate" id="estimate" aria-live="polite">Estimated: <strong>$8</strong></p>
+          <button type="submit" class="btn">Send request</button>
+        </div>
         <p class="form-status full" id="formStatus" role="status"></p>
       </form>
     </div>
@@ -386,18 +393,17 @@
 
   <!-- ===== LIGHTBOX ===== -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" inert>
-    <button type="button" class="lb-close" id="lbClose" aria-label="Close image viewer">&times;</button>
-    <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#10094;</button>
+    <button type="button" class="lb-close" id="lbClose" aria-label="Close image viewer">Close</button>
+    <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&larr;</button>
     <figure>
       <img id="lbImg" src="data:," alt="" width="1408" height="768" />
       <figcaption id="lbCap"></figcaption>
     </figure>
-    <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#10095;</button>
+    <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next image">&rarr;</button>
   </div>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <a href="#home" class="logo" aria-label="Junior's Edge, back to top"><span class="logo-mark" aria-hidden="true">⚔</span><span aria-hidden="true">JUNIOR'S <em>EDGE</em></span></a>
+    <p class="footer-mark">Junior's Edge</p>
     <p>Sharpened by hand. Built to cut.</p>
     <p class="copy">&copy; <span id="year"></span> Junior's Edge. All rights reserved.</p>
   </footer>
